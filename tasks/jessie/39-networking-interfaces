@@ -1,6 +1,6 @@
 ## networking-interfaces
 #
-# In Jessie, interfaces contains the line:
+# In Stretch, interfaces contains the line:
 # source-directory /etc/network/interfaces.d.
 # and (aside from comments) nothing else. However, the dhcpcd daemon
 # will fail to start if eth0 is already defined, so leave it.

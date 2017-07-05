@@ -24,7 +24,7 @@ Features
 * Template support makes recreating newer versions of AMIs quick and
   easy.
 
-* This script is currently tested on AWS with Jessie images. Stretch
+* This script is currently tested on AWS with Stretch images. Stretch
   support will come when the release is stable.
 
 Note: To create an AMI, debian-image-builder needs to be run on an
@@ -62,7 +62,7 @@ while retaining the power and flexibility of alternatives.
   debian-image-builder depends on. eg.
   https://eucalyptus.atlassian.net/browse/TOOLS-294
 
-* The ``no-systemd`` plugin. Keep your Jessie AMIs as free from
+* The ``no-systemd`` plugin. Keep your Stretch AMIs as free from
   Systemd as is reasonably possible (still using only official Debian
   packages).
 
@@ -79,11 +79,11 @@ while retaining the power and flexibility of alternatives.
 * The ``grant-launch-permission`` plugin. Automatically add launch
   permissions to other AWS accounts for generated AMIs.
 
-* Support for more EC2 AMI types. Want Jessie HVM AMIs with a
+* Support for more EC2 AMI types. Want Stretch HVM AMIs with a
   instance-store volume for the root device (for example)? We've got
   you covered.
 
-* Jessie on EC2 uses the ``cloud-init`` package by default.
+* Stretch on EC2 uses the ``cloud-init`` package by default.
 
 
 Setup
@@ -209,7 +209,7 @@ Usage
 
 Now we are ready to start creating AMIs. Using one of the included
 templates is the easiest way to get started. This example creates a
-Jessie HVM AMI with an instance-store root volume of 10Gb and systemd
+Stretch HVM AMI with an instance-store root volume of 10Gb and systemd
 replaced with sysvinit:
 
 ```
@@ -217,7 +217,7 @@ replaced with sysvinit:
     templates/debian-stretch-hvm-amd64-instance-10-sysvinit.cfg
 ```
 
-This next example creates a 50G EBS-backed HVM Jessie instance. Many
+This next example creates a 50G EBS-backed HVM Stretch instance. Many
 defaults are used:
 
 ```
@@ -225,10 +225,10 @@ defaults are used:
     --volume-size 50 \
     --plugin plugins/standard-packages --virt hvm \
     --name-suffix "$(date +%Y%m%d%H%M)" \
-    --description "Debian 8 (Jessie) 50Gb, HVM, EBS"
+    --description "Debian 8 (Stretch) 50Gb, HVM, EBS"
 ```
 
-This final example creates a Jessie x86_64 paravirtual image with a 5G
+This final example creates a Stretch x86_64 paravirtual image with a 5G
 instance-backed root volume, formatted to have 5000000 inodes. The
 image time-zone and locales have been set, and the image name suffix
 is the date and time of execution:
@@ -241,7 +241,7 @@ is the date and time of execution:
     --plugin plugins/move-s3-path \
     --timezone Australia/Melbourne --locale en_AU --charmap UTF-8 \
     --virt paravirtual --name-suffix "$(date +%Y%m%d%H%M)" \
-    --description "Debian 8 (Jessie) 5Gb, paravirtual, instance-store"
+    --description "Debian 8 (Stretch) 5Gb, paravirtual, instance-store"
 ```
 
 Bugs, suggestions, patches and plugins are all welcome. Have fun!
