@@ -1,6 +1,6 @@
 mkdir -p -m 0755 "${imagedir}/etc/apt/sources.list.d/"
-cat > "${imagedir}/etc/apt/sources.list.d/jessie-backports.list" << EOF
+cat > "${imagedir}/etc/apt/sources.list.d/stretch-backports.list" << EOF
 deb http://http.debian.net/debian ${codename}-backports main
 deb-src http://http.debian.net/debian ${codename}-backports main
 EOF
-chmod 0644 "${imagedir}/etc/apt/sources.list.d/jessie-backports.list"
+chmod 0644 "${imagedir}/etc/apt/sources.list.d/stretch-backports.list"
