@@ -1,0 +1,6 @@
+mkdir -p -m 0755 "${imagedir}/etc/apt/preferences.d"
+cat > "${imagedir}/etc/apt/preferences.d/linux-image-amd64" << EOF
+Package: linux-image-amd64
+Pin: release n=${codename}-backports
+Pin-priority: 950
+EOF

@@ -1,0 +1,6 @@
+
+insert_task_before ${TASK_APT_UPGRADE} \
+    "${plugindir}/kernel-from-backports-tasks/01-add_backports"
+
+insert_task_before ${TASK_APT_UPGRADE} \
+    "${plugindir}/kernel-from-backports-tasks/02-pin_kernel"
